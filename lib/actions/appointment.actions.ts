@@ -1,7 +1,5 @@
 "use server";
 
-import { log } from "node:console";
-
 import { revalidatePath } from "next/cache";
 import { ID, Query } from "node-appwrite";
 
