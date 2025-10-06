@@ -21,9 +21,9 @@ export const PatientForm = () => {
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
+      name: "testuser",
+      email: "testuser@gmail.com",
+      phone: "+12345678910",
     },
   });
 
@@ -82,7 +82,7 @@ export const PatientForm = () => {
           control={form.control}
           name="phone"
           label="Phone number"
-          placeholder="(555) 123-4567"
+          placeholder="2345678910"
         />
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>

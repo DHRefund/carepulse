@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loadManifestWithRetries } from "next/dist/server/load-components";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -59,7 +58,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         email: values.email,
         phone: values.phone,
         birthDate: new Date(values.birthDate),
-        gender: values.gender.toLowerCase(),
+        gender: (values.gender.toLowerCase() as Gender) || "other",
         address: values.address,
         occupation: values.occupation,
         emergencyContactName: values.emergencyContactName,

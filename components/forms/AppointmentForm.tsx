@@ -92,6 +92,7 @@ export const AppointmentForm = ({
             cancellationReason: values.cancellationReason,
           },
           type,
+          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC", // <-- thêm đây
         };
 
         const updatedAppointment = await updateAppointment(appointmentToUpdate);
